@@ -49,11 +49,11 @@ class CC implements AA {
 class AAFactory {
 	private static AA ainstance = new BB();
 
-	public static AA getAAInstance() {
+	public static AA getBBInstance() {
 		return ainstance;
 	}
 
-	public static BB getBBInstance() {
+	public static AA getCCInstance() {
 		return new BB();
 	}
 }
@@ -62,15 +62,15 @@ public class Test {
 
 	public static void main(String[] args) {
 		System.out.println("using Interface");
-		AA aaObj = AAFactory.getAAInstance();
+		AA aaObj = AAFactory.getBBInstance();
 		System.out.println(aaObj);
 
-		AA aaObj2 = AAFactory.getAAInstance();
+		AA aaObj2 = AAFactory.getBBInstance();
 		System.out.println(aaObj2);
 
 		System.out.println();
-		AA bbb = AAFactory.getBBInstance();
-		AA bbb2 = AAFactory.getBBInstance();
+		AA bbb = AAFactory.getCCInstance();
+		AA bbb2 = AAFactory.getCCInstance();
 		System.out.println(bbb);
 		System.out.println(bbb2);
 
